@@ -23,9 +23,7 @@ export default [
         console: "readonly",
         __dirname: "readonly",
         module: "readonly",
-        require: "readonly",
-        // Testes
-        jest: "readonly"
+        require: "readonly"
       }
     },
     rules: {
@@ -34,9 +32,21 @@ export default [
     }
   },
 
-  // ajustes específicos para testes
+  // ajustes específicos para testes (Vitest)
   {
     files: ["tests/**/*.test.js"],
+    languageOptions: {
+      globals: {
+        describe: "readonly",
+        it: "readonly",
+        test: "readonly",
+        expect: "readonly",
+        beforeAll: "readonly",
+        afterAll: "readonly",
+        beforeEach: "readonly",
+        afterEach: "readonly"
+      }
+    },
     rules: {
       "no-console": "off"
     }
